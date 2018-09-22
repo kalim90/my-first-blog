@@ -7,17 +7,13 @@
 			<h1><a href='/'>Susie's Blog</a></h1>
 		</div>
 
-		<div>
-			<h2><a href="">My first post</a></h2>
-			<p>published: 2018.09.23, 16:38</p>
-			<p>A while ago, I googled "learn how to code" and landed on a website featuring a free event called "django girls." I signed up to be a part of it and here I am!</p>
-		</div>
-
-		<div>
-			<h3><a href="">My second post</a></h3>
-			<p>published: 2018.09.23, 16:48</p>
-			<p>I ate too much last night.. and this morning.. and this afternoon...</p>
-		</div>
+		{% for post in posts %}
+			<div>
+				<p>published: {{ post.published_date }}</p>
+				<h1><a href="">{{ post.title }}</a></h1>
+				<p>{{ post.text|linebreaksbr }}</p>
+			</div>
+		{% endfor %}
 	</body>
 </html>
 
